@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Picsum</string>
+    <string name="error_failed_to_load_image_list">Error: Failed to load image list</string>
+    <string name="error_viewing_cached_data">Error: Failed to load new images</string>
+    <string name="image_by">Image by %s</string>
+    <string name="refresh_list">Refresh list</string>
+    <string name="id_value">Id: %d</string>
+    <string name="author_value">Author: %s</string>
+    <string name="dimensions_value">Width x Height: %d x %d</string>
+</resources>

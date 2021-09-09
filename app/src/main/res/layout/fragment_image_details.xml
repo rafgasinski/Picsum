@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="image"
+            type="com.example.picsum.data.base.PicsumImage" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Style.NavIconBack"
+            app:title="Details" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorThemeBackground"
+            android:scrollbarThumbVertical="?attr/colorAccent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@{@string/image_by(image.author)}"
+                    app:loadImage="@{image.downloadUrl}" />
+
+                <TextView
+                    android:id="@+id/image_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_view"
+                    android:drawablePadding="4dp"
+                    android:padding="8dp"
+                    android:text="@{@string/id_value(image.id)}"
+                    android:textColor="?attr/colorControlNormal"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_print_theme"
+                    tools:text="Id: 290" />
+
+                <TextView
+                    android:id="@+id/image_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_id"
+                    android:drawablePadding="4dp"
+                    android:padding="8dp"
+                    android:text="@{@string/author_value(image.author)}"
+                    android:textColor="?attr/colorControlNormal"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_author"
+                    tools:text="Author: Elliott Engelmann" />
+
+                <TextView
+                    android:id="@+id/image_dimensions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_author"
+                    android:drawablePadding="4dp"
+                    android:padding="8dp"
+                    android:text="@{@string/dimensions_value(image.width, image.height)}"
+                    android:textColor="?attr/colorControlNormal"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_dimensions"
+                    tools:text="Width x Height: 4000x 2667" />
+
+                <TextView
+                    android:id="@+id/image_download_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_dimensions"
+                    android:drawablePadding="4dp"
+                    android:padding="8dp"
+                    android:text="@{image.downloadUrl}"
+                    android:textColor="?attr/colorControlNormal"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_link"
+                    tools:text="https://picsum.photos/id/994/7149/4771" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorThemeBackground">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            style="@style/Toolbar.Style"
+            android:id="@+id/toolbar"
+            app:menu="@menu/menu_images_list"
+            app:title="@string/app_name" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="?attr/colorAccent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/images_list_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/progressBar"
+            android:padding="6dp"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_image" />
+
+        <TextView
+            android:id="@+id/empty_images_list_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:text="@string/error_failed_to_load_image_list"
+            android:textColor="?attr/colorControlNormal"
+            android:textSize="18sp"
+            app:drawableTopCompat="@drawable/ic_error" />
+
+    </RelativeLayout>
+
+</layout>

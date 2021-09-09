@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Toolbar.Style" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/colorThemeBackground</item>
+        <item name="android:minHeight">?android:attr/actionBarSize</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="Toolbar.Style.NavIconBack" parent="Toolbar.Style">
+        <item name="navigationIcon">@drawable/ic_back</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,23 @@
+package com.example.picsum.utils
+
+import android.annotation.SuppressLint
+import android.content.Context
+import com.bumptech.glide.GlideBuilder
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.load.DecodeFormat
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.module.AppGlideModule
+import com.bumptech.glide.request.RequestOptions
+
+@GlideModule
+class PicsumGlideModule: AppGlideModule() {
+
+    @SuppressLint("CheckResult")
+    override fun applyOptions(context: Context, builder: GlideBuilder) {
+        super.applyOptions(context, builder)
+        builder.apply { RequestOptions()
+            .format(DecodeFormat.PREFER_RGB_565)
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+        }
+    }
+}
